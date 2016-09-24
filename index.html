@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX Assignment</title>
+</head>
+<body>
+
+<script type="template/handlebars" id="reddit-search-template">
+  {{#each subreddits}}
+    <div class="song">
+      <p>Score: {{score}}</p>
+	  <p>Title: <a href="{{url}}">{{title}}</a></p>
+      <p>Number of comments: {{num_comments}}</p>
+	  <p>
+	  {{#if archived}}
+		Archived
+	  {{else}}
+		Not archived
+	  {{/if}}
+	  </p>
+    </div>
+	<hr />
+  {{else}}
+    <p>Nothing found.</p>
+  {{/each}}
+</script>
+
+<input type="text" name="searchbox" id="searchbox" />
+<button name="searchsubmit" id="searchsubmit">Search</button>
+
+
+<div id="reddit-list"></div>
+
+<script src="jquery-3.1.0.js"></script>
+<script src="handlebars-v4.0.5.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
